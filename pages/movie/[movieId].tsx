@@ -1,17 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router';
-import Image from 'next/image'
 import Loader from '../../components/Loader';
 import {WildCard, DetailT} from '../../List.types'
-import Link from "next/link"
-
-interface loader {
-  src: string;
-  width: number
-  return : string
-}
-
-
 
 const MovieDetail:React.FC<DetailT> = (props) => {
  
@@ -25,7 +15,6 @@ const MovieDetail:React.FC<DetailT> = (props) => {
       <Loader />
     )
   }
-
 
   return (
     <>

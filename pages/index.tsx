@@ -1,9 +1,9 @@
 import axios from 'axios'
 import type { NextPage } from 'next'
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import List from '../components/List';
 import Loader from '../components/Loader';
-import { ListT, WildCard } from '../List.types';
+import { ListT } from '../List.types';
 import { useRouter } from 'next/router'
 
 const MY_API = 'a58e7fb1207940e3640a468b00b20609'
@@ -28,7 +28,7 @@ const Home: NextPage = (props) => {
       </div>
       <form className='w-full flex justify-center mb-20' onSubmit={GoSearch}>
         <input 
-          className='w-8/12 h-10 rounded-xl mb-6 p-2 focus:border-2 focus:outline-blue-400 focus:boxShadow focus:transition-all' 
+          className='w-8/12 h-10 rounded-xl mb-6 p-2 focus:border-2 focus:outline-blue-400 focus:boxShadow focus:transition-all'
           ref={inputRef} 
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
           value={value}

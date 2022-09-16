@@ -1,5 +1,5 @@
 import React from 'react'
-import { WildCard, DetailT, ListT } from '../../../List.types'
+import { WildCard, ListT } from '../../../List.types'
 import List from '../../../components/List'
 import Loader from '../../../components/Loader'
 import Link from "next/link"
@@ -7,13 +7,6 @@ import Link from "next/link"
 interface GetParams {
   data: ListT
   query: string
-}
-
-interface Result {
-  page:number
-  results: any[]
-  total_pages:number
-  total_results:number
 }
 
 const SearchedMovie:React.FC<GetParams>= ({data, query}) => {

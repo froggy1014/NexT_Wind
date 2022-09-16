@@ -55,10 +55,9 @@ const MovieDetail:React.FC<DetailT> = (props) => {
 export async function getServerSideProps(context: WildCard){
 
   const {params} = context
-
   const id = params.movieId;
 
-  const data = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=a58e7fb1207940e3640a468b00b20609&language=en-US`)
+  const data = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.MY_API}&language=en-US`)
   .then(response => {return response.json()})
 
   return {

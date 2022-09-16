@@ -31,12 +31,11 @@ const SearchedMovie:React.FC<GetParams>= ({data, query}) => {
 }
 
 export async function getServerSideProps(context: WildCard){
-  const MY_API = 'a58e7fb1207940e3640a468b00b20609'
   const {params} = context
 
   const query = params.search;
 
-  const data = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${MY_API}&language=en-US&query=${query}&page=1&include_adult=false`)
+  const data = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.MY_API}&language=en-US&query=${query}&page=1&include_adult=false`)
   .then(response => {return response.json()})
 
   return {

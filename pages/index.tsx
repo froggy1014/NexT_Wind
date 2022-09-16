@@ -6,7 +6,7 @@ import Loader from '../components/Loader';
 import { ListT } from '../List.types';
 import { useRouter } from 'next/router'
 
-const MY_API = 'a58e7fb1207940e3640a468b00b20609'
+// const MY_API = 'a58e7fb1207940e3640a468b00b20609'
 
 
 const Home: NextPage = (props) => {
@@ -52,11 +52,9 @@ const Home: NextPage = (props) => {
 
 export async function getStaticProps(){
 
-    const data = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${MY_API}&language=en-US&page=1`)
+    const data = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.MY_API}&language=en-US&page=1`)
     .then(response => {return response.json()})
     .catch(err => console.log(err))
-    
-    console.log(data);
 
   return {
     props: {
